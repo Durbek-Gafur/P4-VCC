@@ -1,0 +1,5 @@
+table_clear MyEgress.swtrace
+table_clear MyIngress.ipv4_lpm 
+table_set_default MyEgress.swtrace add_swtrace 3
+table_add MyIngress.ipv4_lpm ipv4_forward 10.0.1.0/32 => 08:00:00:00:01:00 1
+table_add MyIngress.ipv4_lpm ipv4_forward 10.0.2.0/32 => 08:00:00:00:02:00 2
