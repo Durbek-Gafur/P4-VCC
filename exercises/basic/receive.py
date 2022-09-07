@@ -19,7 +19,7 @@ def get_if():
     ifs=get_if_list()
     iface=None
     for i in get_if_list():
-        if "eth0" in i:
+        if "ens7" in i:
             iface=i
             break;
     if not iface:
@@ -48,8 +48,8 @@ def handle_pkt(pkt):
 
 
 def main():
-    ifaces = [i for i in os.listdir('/sys/class/net/') if 'eth' in i]
-    iface = ifaces[0]
+    #ifaces = [i for i in os.listdir('/sys/class/net/') if 'eth' in i]
+    iface = "ens7"
     print("sniffing on %s" % iface)
     sys.stdout.flush()
     sniff(iface = iface,
